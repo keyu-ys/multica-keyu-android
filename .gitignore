@@ -1,0 +1,25 @@
+# Gradle & build outputs
+.gradle/
+.kotlin/
+build/
+app/build/
+captures/
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# Local machine & signing config
+local.properties
+signing/*.keystore
+signing/*.jks
+*.keystore
+*.jks
+keystore.properties
+
+# IDE & OS
+.idea/
+*.iml
+.DS_Store
+*.log
+*.hprof

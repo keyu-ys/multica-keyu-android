@@ -1,0 +1,15 @@
+# Copy to local.properties (ignored by git) and adjust for your environment.
+sdk.dir=/path/to/Android/sdk
+
+# Optional: pre-fill default Multica server & workspace on first launch
+# multica.defaultServer=https://your-multica-server.example.com
+# multica.defaultSlug=your-workspace
+
+# Optional: fallback Multica issue ID hosting OTA manifest JSON
+# multica.otaIssueId=
+
+# Optional: fixed signing keystore for consistent overwrite installs across machines
+# signing.storeFile=signing/release.keystore
+# signing.storePassword=your-store-password
+# signing.keyAlias=your-key-alias
+# signing.keyPassword=your-key-password
