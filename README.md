@@ -1,167 +1,114 @@
 <p align="center">
-  <img src="docs/logo.png" alt="Multica 助手 Logo" width="88" />
+  <img src="docs/logo.png" alt="Multica Android 客户端图标" width="84" />
 </p>
 
-<h1 align="center">Multica 助手（Android）</h1>
+<h1 align="center">Multica Android 客户端（Multica 助手）</h1>
 
 <p align="center">
-  轻量级原生 Android 随行客户端，基于 Kotlin 与 Jetpack Compose 构建。<br />
-  随时随地与 Multica 多智能体对话、处理任务收件箱，并在任意 App 上通过悬浮球截屏圈注反馈。
+  <b>开源、轻便、开箱即用的 Multica 手机端（Android App）</b><br />
+  Multica 官方目前暂未提供移动客户端 —— 这款开源安卓端让你在手机上随时召唤多智能体，<br />
+  并通过<b>跨应用悬浮球</b>，在任何页面随手截屏、圈画、说话，把想法和问题直接交给 AI 处理。
 </p>
 
 <p align="center">
-  <img alt="Platform" src="https://img.shields.io/badge/Platform-Android%2010%2B-3DDC84?logo=android&logoColor=white" />
-  <img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-2.1-7F52FF?logo=kotlin&logoColor=white" />
-  <img alt="Jetpack Compose" src="https://img.shields.io/badge/UI-Jetpack%20Compose-4285F4?logo=jetpackcompose&logoColor=white" />
-  <img alt="ABI" src="https://img.shields.io/badge/ABI-arm64--v8a-111827" />
+  <a href="#为什么好用尤其是悬浮助手">核心体验</a> ·
+  <a href="#实机界面">实机界面</a> ·
+  <a href="#3-步上手">3 步上手</a> ·
+  <a href="#english-overview">English Overview</a>
 </p>
 
 ---
 
-## 核心特性
+## 为什么好用（尤其是悬浮助手）
 
-### 1. 多智能体对话（聊天）
-- **会话管理**：支持切换工作区内任意智能体，侧边栏直观展示置顶、未读与实时「正在输入…」状态。
-- **排队与引导**：默认排队发送不打断当前执行，也支持对排队消息置顶优先或立即停止任务。
-- **思考过程摘要**：以折叠节点精炼展示智能体的思考与执行步骤，点击可展开细节，不堆砌底层日志。
+### 1. 悬浮助手：不切 App，看到什么直接圈给智能体
+很多时候灵感、问题或资料并不在聊天窗口里，而是在你正在浏览的网页、文档、设计稿或任意手机应用里。开启**悬浮助手**后，一颗贴边悬浮球会安静地停在屏幕边缘：
 
-### 2. 富内容消息渲染
-- **完整 Markdown / GFM**：支持标题、粗斜体、删除线、引用、任务清单、嵌套列表、代码块一键复制。
-- **对齐表格**：支持列对齐、转义竖线、单元格换行、宽表横向滑动、一键复制与全屏查看。
-- **可视化与多媒体**：支持多图组合与高清大图预览、行内视频卡片播放、**沙箱 HTML 实时交互预览**、**Mermaid 流程图渲染**，并支持「预览 / 源码 / 复制 / 全屏」一键切换。
+- **随手截屏圈注**：点开悬浮面板点「截屏」（或**长按悬浮球直接秒截**），立即进入全屏标注——画笔涂鸦、红框圈重点，补一句文字或直接用输入法语音说想法，不用先存相册再切 App 找图。
+- **多条先暂存，一次发完**：体验一个产品或看一篇长文时，发现好几处想聊的地方？每截一张点「暂存」攒起来，最后一口气发给选定的智能体，上下文清晰完整。
+- **随时速记，不打断当下**：脑子里闪过一个念头，点悬浮面板「速记」立刻记下来发走，当前在看什么完全不中断。
+- **发完就走，做完提醒**：任务交给后台智能体后你可以继续用手机，处理完成自动弹出通知与悬浮提醒，点一下直接看结果。
 
-### 3. 工作收件箱与任务协作（工作）
-- **收件箱聚焦**：支持「与我相关」与「全部」筛选、一键全部已读与归档。
-- **任务对话**：直接在手机上查看任务详情、完整时间线评论与附件，并随时回复或唤起负责智能体。
-
-### 4. 全局悬浮助手与截屏圈注
-- **贴边悬浮球**：展示当前智能体头像，拖拽松手自动吸附屏幕边缘，闲置轻度半透明减少遮挡。
-- **随手截屏圈注**：单击打开悬浮控制面板，长按直接截屏（Android 14+ 支持整屏捕获）；支持画笔/矩形框选标注、多色切换与文字/语音输入法速记。
-- **批量收集发送**：可先连续「再加一条」收集多张标注截图或想法，再在底部确认面板统一发往当前会话或新建会话。
-
-### 5. 后台通知与轻量 OTA 更新
-- **离线回复提醒**：后台轮询接收新回复，支持系统通知与悬浮完成气泡，点击直达目标会话或任务。
-- **APK 附件安装**：对话中收到 `.apk` 附件时自动呈现安装卡片；可选开启「同签名应用自动更新」（仅对本机已安装且签名严格一致的应用生效）。
-- **无打扰自更新**：后台静默检查新版本，侧边栏下载图标轻亮提示；消息区顶部提供单行更新提示条（同一版本 24 小时最多提醒一次，15 秒无操作自动收起），下载后自动校验 `SHA-256 + 包名 + 签名` 覆盖安装。
+### 2. 轻便顺手的手机对话与工作台
+- **多智能体随切随聊**：手机上随时切换不同智能体、新建或续聊会话；支持排队发消息，AI 正在干活也能继续补充想法。
+- **复杂结果一眼看懂**：智能体回复的**流程图、数据看板、宽表格、视频、多图**在手机上直接清晰呈现，不用放大眯眼看乱码。
+- **聊天 + 工作两不误**：顶部一键切换「聊天」与「工作」，收件箱聚焦「与我相关」的提醒，点开就能直接回复推进任务。
+- **安静不打扰的更新**：有新版本时仅在顶部轻提示，几秒后自动收起，点一下就能应用内直接升级。
 
 ---
 
-## 界面预览
+## 实机界面
 
 <table>
   <tr>
     <td align="center" width="33%">
-      <img src="docs/screenshots/01-home.png" alt="对话首页" width="240" /><br />
-      <sub><b>对话首页与悬浮助手入口</b></sub>
+      <img src="docs/screenshots/01-float-hub.png" alt="跨应用悬浮控制面板" width="240" /><br />
+      <sub><b>任意页面唤起悬浮面板</b><br />截屏、速记、发送一步到位</sub>
     </td>
     <td align="center" width="33%">
-      <img src="docs/screenshots/02-rich-content.png" alt="富内容渲染" width="240" /><br />
-      <sub><b>Mermaid 流程图、HTML 看板与代码块</b></sub>
+      <img src="docs/screenshots/02-float-annotate.png" alt="截屏圈注与暂存" width="240" /><br />
+      <sub><b>随手画笔 / 框选圈注</b><br />支持多张暂存后一次发送</sub>
     </td>
     <td align="center" width="33%">
-      <img src="docs/screenshots/03-media-html.png" alt="视频与交互 HTML" width="240" /><br />
-      <sub><b>行内视频卡片与交互式 HTML 预览</b></sub>
+      <img src="docs/screenshots/03-home.png" alt="极简对话首页" width="240" /><br />
+      <sub><b>清爽极简的主界面</b><br />聊天 / 工作一键切换</sub>
     </td>
   </tr>
   <tr>
     <td align="center" width="33%">
-      <img src="docs/screenshots/04-source-toggle.png" alt="源码切换" width="240" /><br />
-      <sub><b>HTML / Mermaid 预览与源码切换</b></sub>
+      <img src="docs/screenshots/04-rich-content.png" alt="流程图与数据看板渲染" width="240" /><br />
+      <sub><b>流程图与数据看板直出</b><br />AI 生成的图表手机原样看</sub>
     </td>
     <td align="center" width="33%">
-      <img src="docs/screenshots/05-table-fullscreen.png" alt="表格全屏查看" width="240" /><br />
-      <sub><b>GFM 表格全屏查看</b></sub>
+      <img src="docs/screenshots/05-media-html.png" alt="视频卡片与交互预览" width="240" /><br />
+      <sub><b>视频卡片与交互页面预览</b><br />点开即看、点按可交互</sub>
     </td>
     <td align="center" width="33%">
-      <img src="docs/screenshots/06-update-tip.png" alt="顶部更新提示条" width="240" /><br />
-      <sub><b>非打扰顶部更新提示条</b></sub>
+      <img src="docs/screenshots/06-update-tip.png" alt="顶部轻量更新提示" width="240" /><br />
+      <sub><b>不打扰的轻量更新提示</b><br />自动收起、一键直升</sub>
     </td>
   </tr>
 </table>
 
 ---
 
-## 快速开始
+## 3 步上手
 
-### 环境要求
-- **JDK**：17
-- **Android SDK**：`compileSdk 36`、`minSdk 29`（Android 10 及以上）
-- **目标架构**：`arm64-v8a`
+适合所有 **Multica**（官方云端或团队自托管）用户，无需懂代码：
 
-### 构建 APK
+1. **安装应用**：前往本仓库的 **Releases** 下载最新 Android 安装包（APK）安装到手机（支持 Android 10 及以上机型）。
+2. **连接你的 Multica**：打开「Multica 助手」，填入你的 Multica 服务器地址与工作区名称，输入工作邮箱验证码即可登录。
+3. **开启悬浮助手**：点主页右上角圆点图标（或首页「开启悬浮助手」按钮），按系统提示开启悬浮窗与截屏授权，即可在任何 App 上随手圈注发给智能体。
+
+> **关于隐私与连接**：本应用为纯客户端，直连你自行填写的 Multica 服务器，不经过任何第三方中转服务器；截屏仅在你主动触发时发生。
+
+---
+
+## English Overview
+
+**Multica Android Client (Multica Helper)** is a lightweight, **open-source Android app for [Multica](https://multica.ai)** — built for users who want a fast, effortless mobile experience since there is currently no official Multica Android app.
+
+- **Floating Assistant Overlay (Highlight Feature)**: Keep a subtle edge-docked bubble over any app or webpage. Tap to open quick actions or long-press for instant screenshot capture, circle/box areas of interest, add a quick text or voice note, batch multiple captures together, and send them straight to any Multica agent without switching apps.
+- **Effortless Multi-Agent Chat & Work Inbox**: Switch between agents, queue follow-up messages while an agent is working, and stay on top of your Multica work inbox with background reply notifications.
+- **Rich Mobile Rendering**: Read complex AI outputs cleanly on a phone screen — Mermaid flowcharts, interactive HTML dashboards, aligned tables, inline videos, image galleries, and code blocks.
+- **Works with Any Multica Server**: Direct connection to your self-hosted or cloud Multica workspace using email verification login. No third-party relay.
+
+**Keywords**: Multica Android app, Multica mobile client, Multica APK, unofficial open-source Multica Android client, Multica floating screenshot assistant, AI agent mobile companion.
+
+---
+
+<details>
+<summary><b>开发者选项：从源码自行编译（可选）</b></summary>
+
+需要 JDK 17 与 Android SDK（`compileSdk 36`，`minSdk 29`）：
 
 ```bash
-# 1. 克隆仓库
 git clone git@github.com:keyu-ys/multica-keyu-android.git
 cd multica-keyu-android
-
-# 2. 配置本地 Android SDK 路径（可选同时预设服务器地址与固定签名，见 local.properties.example）
-cp local.properties.example local.properties
-
-# 3. 构建 Debug / Release APK
+cp local.properties.example local.properties   # 填入本地 sdk.dir，可选预设默认服务器与签名
 ./gradlew assembleDebug
-./gradlew assembleRelease
 ```
 
-构建产物位于：
-- Debug：`app/build/outputs/apk/debug/app-debug.apk`
-- Release：`app/build/outputs/apk/release/app-release-unsigned.apk`（若配置了 `signing/release.keystore` 则输出已签名的 `app-release.apk`）
+若团队需要自定义默认服务器地址、固定覆盖安装签名或自建应用内 OTA 更新源，详见 `local.properties.example`。
 
-### 首次使用配置
-1. 安装并打开 **Multica 助手**。
-2. 在登录页填写你的 **Multica 服务器地址**（例如 `https://your-multica-server.example.com`）和 **工作区 slug**。
-3. 输入工作邮箱并获取验证码，完成登录后即可开始对话或开启悬浮助手。
-
-> 若希望团队内构建自带默认服务器地址或统一签名（确保后续版本可覆盖安装且不丢失登录态），可在本地 `local.properties` 中配置 `multica.defaultServer`、`multica.defaultSlug` 以及 `signing.*` 参数（`local.properties` 与 `*.keystore` 均已加入 `.gitignore`，不会提交到仓库）。
-
----
-
-## OTA 更新接入（可选）
-
-客户端内置三层版本清单解析策略，服务端按需配置任意一层即可启用应用内自更新：
-
-1. **服务端全局配置**：`GET ${server}/api/config`
-   - 返回 `android_client` 对象，或通过 `android_release_url` 指定清单 JSON 地址。
-2. **固定发布目录**：`GET ${server}/releases/android/latest.json`
-3. **兜底清单（可选）**：通过 `local.properties` 配置 `multica.otaIssueId`，读取对应 Multica Issue 描述中的 JSON 代码块。
-
-清单 JSON 格式示例：
-
-```json
-{
-  "pkg": "com.mtk.keyu",
-  "version_code": 2026112702,
-  "version_name": "2026.11.27.2",
-  "url": "https://your-multica-server.example.com/releases/android/multica-keyu-2026.11.27.2-arm64.apk",
-  "sha256": "<64位小写SHA-256>",
-  "size_bytes": 3131126,
-  "notes": "一句话更新说明"
-}
-```
-
----
-
-## 项目结构
-
-核心代码全部位于 `app/src/main/java/com/mtk/keyu/`，保持单模块扁平组织、低依赖与高可维护性：
-
-| 分类 | 核心文件 | 说明 |
-| :--- | :--- | :--- |
-| **主界面与设置** | `MainActivity.kt`、`Work.kt`、`Settings.kt`、`Theme.kt`、`Icons.kt`、`Avatar.kt` | 聊天主界面、工作收件箱与任务详情、登录与设置页、品牌主题与自定义图标 |
-| **富内容渲染** | `Markdown.kt`、`RichWeb.kt`、`RichMedia.kt`、`AttachmentImage.kt`、`ThinkingProgress.kt` | GFM 解析与表格布局、沙箱 HTML / Mermaid WebView、视频卡片、图片画廊与思考进度摘要 |
-| **悬浮与截屏标注** | `BubbleService.kt`、`CaptureService.kt`、`FloatPanelOverlay.kt`、`AnnotateOverlay.kt`、`AnnotateUi.kt`、`AnnotateActivity.kt`、`Outbox.kt` | 贴边悬浮球、MediaProjection 整屏捕获、深色悬浮控制面板、全屏涂鸦圈注与多条待发草稿箱 |
-| **网络与状态** | `Api.kt`、`AppState.kt` | Multica REST API 客户端、全局响应式状态缓存 |
-| **通知、安装与更新** | `ReplyService.kt`、`Notify.kt`、`Installer.kt`、`InstallReceiver.kt`、`AutoUpdater.kt`、`UpdateTip.kt` | 后台消息轮询与系统通知、同签名校验 APK 安装器、静默 OTA 引擎与顶部更新提示条 |
-
----
-
-## 权限说明
-
-| 权限 | 用途 |
-| :--- | :--- |
-| `INTERNET` | 连接 Multica 服务端与加载在线媒体 / Mermaid 渲染脚本 |
-| `SYSTEM_ALERT_WINDOW` | 展示贴边悬浮球、悬浮控制面板与回复完成气泡 |
-| `FOREGROUND_SERVICE` / `MEDIA_PROJECTION` | 仅在开启悬浮助手截屏时捕获屏幕画面，支持 Android 14+ 整屏捕获 |
-| `POST_NOTIFICATIONS` | 后台收到智能体回复或工作通知时发送系统提醒 |
-| `REQUEST_INSTALL_PACKAGES` | 仅用于应用内 OTA 自更新及用户确认后的 APK 附件安装 |
-| `REQUEST_IGNORE_BATTERY_OPTIMIZATIONS` | 可选，用于降低系统后台查杀导致通知延迟的概率 |
+</details>
